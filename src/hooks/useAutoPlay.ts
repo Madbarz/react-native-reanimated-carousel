@@ -29,13 +29,13 @@ export function useAutoPlay(opts: {
             return;
         }
 
-        timer.current = setInterval(() => {
-            setTimeout(() => {
+        timer.current = setTimeout(() => {
+            setInterval(() => {
                 autoPlayReverse
                     ? carouselController.prev()
                     : carouselController.next();
-            }, 1000);
-        }, autoPlayInterval);
+            }, autoPlayInterval);
+        }, 2000);
     }, [
         pause,
         autoPlay,
