@@ -30,7 +30,7 @@ function Carousel<T>(
         height,
         vertical,
         autoPlay,
-        autoPlayDelay,
+        autoPlayDelay = 5000,
         windowSize,
         autoPlayReverse,
         autoPlayInterval,
@@ -85,6 +85,7 @@ function Carousel<T>(
         autoPlayInterval,
         autoPlayReverse,
         carouselController,
+        autoPlayDelay,
     });
 
     const scrollViewGestureOnScrollBegin = React.useCallback(() => {

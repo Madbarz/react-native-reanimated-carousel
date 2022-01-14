@@ -6,11 +6,13 @@ export function useAutoPlay(opts: {
     autoPlayInterval?: number;
     autoPlayReverse?: boolean;
     carouselController: ICarouselController;
+    autoPlayDelay: number;
 }) {
     const {
         autoPlay = false,
         autoPlayReverse = false,
         autoPlayInterval,
+        autoPlayDelay,
         carouselController,
     } = opts;
 
@@ -29,18 +31,17 @@ export function useAutoPlay(opts: {
             return;
         }
 
-        timer.current = setTimeout(() => {
-            setInterval(() => {
-                autoPlayReverse
-                    ? carouselController.prev()
-                    : carouselController.next();
-            }, autoPlayInterval);
-        }, 2000);
+        timer.current = setInterval(() => {
+            autoPlayReverse
+                ? carouselController.prev()
+                : carouselController.next();
+        }, autoPlayDelay);
     }, [
         pause,
         autoPlay,
         autoPlayReverse,
         autoPlayInterval,
+        autoPlayDelay,
         carouselController,
     ]);
 
