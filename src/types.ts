@@ -72,6 +72,11 @@ export type TCarouselProps<T = any> = {
      */
     autoPlayInterval?: number;
     /**
+     * Auto play delay
+     * @description delay between each item switch
+     */
+    autoPlayDelay?: number;
+    /**
      * Carousel container style
      */
     style?: ViewStyle;

@@ -1,19 +1,19 @@
 import React, { PropsWithChildren } from 'react';
-import Animated, { runOnJS, useDerivedValue } from 'react-native-reanimated';
-import { useCarouselController } from './hooks/useCarouselController';
-import { useAutoPlay } from './hooks/useAutoPlay';
-import { usePropsErrorBoundary } from './hooks/usePropsErrorBoundary';
-import { ScrollViewGesture } from './ScrollViewGesture';
-import { useVisibleRanges } from './hooks/useVisibleRanges';
-import type { ICarouselInstance, TCarouselProps } from './types';
 import { StyleSheet, View } from 'react-native';
+import Animated, { runOnJS, useDerivedValue } from 'react-native-reanimated';
 import { DATA_LENGTH } from './constants';
-import { BaseLayout } from './layouts/BaseLayout';
-import { useLayoutConfig } from './hooks/useLayoutConfig';
-import { useInitProps } from './hooks/useInitProps';
-import { CTX } from './store';
+import { useAutoPlay } from './hooks/useAutoPlay';
+import { useCarouselController } from './hooks/useCarouselController';
 import { useCommonVariables } from './hooks/useCommonVariables';
+import { useInitProps } from './hooks/useInitProps';
+import { useLayoutConfig } from './hooks/useLayoutConfig';
 import { useOnProgressChange } from './hooks/useOnProgressChange';
+import { usePropsErrorBoundary } from './hooks/usePropsErrorBoundary';
+import { useVisibleRanges } from './hooks/useVisibleRanges';
+import { BaseLayout } from './layouts/BaseLayout';
+import { ScrollViewGesture } from './ScrollViewGesture';
+import { CTX } from './store';
+import type { ICarouselInstance, TCarouselProps } from './types';
 
 function Carousel<T>(
     _props: PropsWithChildren<TCarouselProps<T>>,
@@ -30,6 +30,7 @@ function Carousel<T>(
         height,
         vertical,
         autoPlay,
+        autoPlayDelay,
         windowSize,
         autoPlayReverse,
         autoPlayInterval,
