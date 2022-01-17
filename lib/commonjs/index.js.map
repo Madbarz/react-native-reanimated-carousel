@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.tsx"],"names":["Carousel"],"mappings":";;;;;;;AACA;;;;eAEeA,iB","sourcesContent":["export type { TCarouselProps, ICarouselInstance } from './types';\nimport Carousel from './Carousel';\n\nexport default Carousel;\n"]}
